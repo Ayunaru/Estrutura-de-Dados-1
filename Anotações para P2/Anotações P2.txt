@@ -1,0 +1,86 @@
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+pesquisa sequencial O(n):
+padrão, vai pesquisando de forma sequencial até encontrar
+
+método de mover pra frente: 
+registros recuperados são movidos para a posição v[0]
+método de transposição:
+registros recuperados trocam de posição com o anterior
+
+---------------------------------
+busca binária O(log n)
+- arranjo ordenado
+- começa no meio da tabela:
+meio igual = número buscado então a busca foi sucedida
+caso seja menor ela procura na metade inferior
+caso seja maior ela procura na metade superior
+
+
+EM CADA COMPARAÇÃO O NÚMERO É REDUZIDO PELA METADE
+PRECISA ESTAR ORDENADO
+N DA PRA IMPLEMENTAR EM LISTA ENCADEADA
+
+---------------------------------
+
+Busca por interpolação (O(log(log(n))
+
+Segue uma fórmula para efetuar sua busca:
+
+meio = ini + (fim - ini) * ((x-v[ini])/v[fim] - v[ini]))
+
+onde: 
+ini -> 1
+fim -> TAM do vet
+x -> número procurado
+Atente-se pois eles são apenas as posições, já v[ini] ou v[fim] é o valor do vet
+
+PRECISA ESTAR ORDENADO
+OBS: ini e fim são redefinidos da mesma forma em relação à busca binária
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+ORDENAÇÃO
+
+Bubblesort: O(n²)
+Percorre o vetor, comparando o v[i] com v[i+1]:
+trocando de posição se v[i] > v[i+1]
+mantendo se v[i] <= v[i+1]
+
+PIOR CASO: VETOR ORDENADO DE TRÁS PRA FRENTE
+fácil de implementar
+ESTÁVEL (NÃO TROCA NUM IGUAIS)
+
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+Selection Sorce: O(n²)
+
+Escolhe o maior ou menor elemento para colocar em sua respectiva posição
+Logo "altera o tam do vet" para fazer esse processo novamente até ordernar
+
+ESTÁVEL (NÃO TROCA NUM IGUAIS)
+PIOR CASO: ORDERNADO DE TRÁS PRA FRENTE EM GRANDES VETORES
+fácil de implementar
+
+bom pra pequenos arranjos
+
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+Inser Sorce O(n²)
+
+Jogador de cartas
+eficiente para pequenas entradas
+
+Deve ser utilizado quando o arquivo está "quase" ordenado
+Desvantagem: alto custo de movimentação de elementos
+
+-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+Quicksort O(n²)
+
+Escolhe um pivo onde todos os números menores q eles ficam a esquerda e os maiores a direita
+DIVIDIR E CONQUISTAR
+
+- Prático para arrays grandes
+- Ruim em: dados quase ordenados ou ordenados em ordem inversa
